@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculo_consumo</title>
+</head>
+<body>
+	<h3>¿Alcohol o gasolina?</h3>
+</body>
+<script>
+	var tanqueCombustible = 40;
+	var distanciaGasolina = 480;
+	var eficiencia = distanciaGasolina / tanqueCombustible;
+	document.write("<h3>Con gasolina...</h3>")
+	document.write("El carro recorre " + eficiencia + " kilometros por cada litro de gasolina.");
+	document.write("<br>");
+	document.write("<br>");
+
+	var distanciaAlcohol = 300;
+	eficiencia = distanciaAlcohol / tanqueCombustible;
+	document.write("<h3>Con alcohol...</h3>")
+	document.write("El carro recorre " + eficiencia + " kilometros por cada litro de alcohol.");
+</script>
+</html>
