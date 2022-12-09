@@ -9,16 +9,23 @@
 	<h3>¿Alcohol o gasolina?</h3>
 </body>
 <script>
+	function saltarLinea() {
+		document.write("<br><br>");
+	}
+	
 	var tanqueCombustible = 40;
 	var distanciaGasolina = 480;
 	var eficiencia = distanciaGasolina / tanqueCombustible;
+
 	document.write("<h3>Con gasolina...</h3>")
 	document.write("El carro recorre " + eficiencia + " kilometros por cada litro de gasolina.");
-	document.write("<br>");
-	document.write("<br>");
+
+	saltarLinea();
+	saltarLinea();
 
 	var distanciaAlcohol = 300;
 	eficiencia = distanciaAlcohol / tanqueCombustible;
+
 	document.write("<h3>Con alcohol...</h3>")
 	document.write("El carro recorre " + eficiencia + " kilometros por cada litro de alcohol.");
 </script>
