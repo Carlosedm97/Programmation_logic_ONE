@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>licencia_conduccion</title>
+</head>
+<body>
+	<h3>¿Puedes conducir?</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	var tieneLicencia = prompt("¿Tiene licencia de conducción?, responda Si o No.");
+	
+
+	if (tieneLicencia == "Si" || tieneLicencia == "Sí" || tieneLicencia == "si" || tieneLicencia == "sí" || tieneLicencia == "S" || tieneLicencia == "s"){
+		var edad = parseInt(prompt("¿Cuantos años tiene?"));
+		if (edad >= 18) {
+			imprimir("¡Excelente!, ya puede conducir.");
+		} else {
+			imprimir("¡Lo sentimos!, todavía no puede conducir, es menor de edad.");
+		}
+	} else {
+		imprimir("¡Lo sentimos!, no puede conducir sin licencia.");
+	}
+</script>
+</html>

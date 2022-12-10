@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculadora_futbol</title>
+</head>
+<body>
+	<h3>Calculadora para calcular los puntos de un equipo de futbol...</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	var nom_equipo = prompt("Bienvenido a la calculadora de puntos de una liga de futbol. Por favor ingrese el nombre del equipo.");
+	var nro_victorias = parseInt(prompt("Ingrese el número de partidos ganados: "));
+	var nro_empatados = parseInt(prompt("Ingrese el número de partidos empatados: "));
+	var pts_anteriores = parseInt(prompt("Ingrese los puntos obtenidos en la liga anterior: "));
+
+	var pts_totales = (nro_victorias * 3) + nro_empatados;
+
+	imprimir("El número de puntos para el equipo " + nom_equipo + " es de " + pts_totales + " pts.");
+
+	if (pts_totales > pts_anteriores){
+		imprimir("El equipo tuvo un mejor rendimiento que el año anterior.")
+	}
+	if (pts_totales == pts_anteriores){
+		imprimir("El equipo tuvo un igual rendimiento que el año anterior.")
+	}
+	if (pts_totales < pts_anteriores){
+		imprimir("El equipo tuvo un peor rendimiento que el año anterior.")
+	}
+</script>
+</html>

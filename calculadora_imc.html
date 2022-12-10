@@ -29,9 +29,29 @@
 		return promedioIMC;
 	}
 
-	var imcCarlos = calcularIMC(1.65, 71.8, "Carlos");
-	var imcAndrea = calcularIMC(1.58, 72.2, "Andrea");
+	var nombre = prompt("Ingrese su nombre: ");
+	alert("Hola, " + nombre + " bienvenido a la calculadora de índice de masa corporal. Por favor da click en 'Aceptar'");
+	var estatura = prompt("Por favor, ingrese su estatura en cm: ");
+	var peso = prompt("Por favor, ingrese su peso en kg: ");
+	
+	var imcCalculado = calcularIMC(estatura, peso, nombre);
 
-	imprimir("El promedio de los dos indices de masa corporal es de: " + promedioIMC(imcCarlos, imcAndrea));
+	if (imcCalculado < 18.5){
+		imprimir("ESTADO: insuficiencia ponderal.");
+	}
+
+	if (imcCalculado >= 18.5 && imcCalculado <= 24.9){
+		imprimir("ESTADO: intervalo normal.");
+	}
+
+	if (imcCalculado >= 25){
+		imprimir("ESTADO: sobrepeso.");
+	}
+
+	if(imcCalculado >= 30){
+		imprimir("ESTADO: obesidad.");
+	}
+
+	// imprimir("El promedio de los dos indices de masa corporal es de: " + promedioIMC(imcCarlos, imcAndrea));
 </script>
 </html>

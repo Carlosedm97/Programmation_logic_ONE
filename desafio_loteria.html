@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>desafio_loteria</title>
+</head>
+<body>
+	<h3>Ahora tratemos de adivinar el número de la maquina...</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	function sorteo(n){
+		return Math.round(Math.random() * n);
+	}
+
+	var numero = parseInt(prompt("Por favor ingrese un número para definir el rango en que quiere que se haga el sorteo: "));
+	var numeroSistema = sorteo(numero);
+	var numeroUsuario = parseInt(prompt("Ahora ingrese el número que cree que va a salir: "));
+
+	if (numeroUsuario > numeroSistema){
+		imprimir("El número que usted ingreso es mayor que el número aleatorio del sistema. El número fue " + numeroSistema + ".");
+	}
+
+	if (numeroUsuario == numeroSistema){
+		imprimir("¡Felicitaciones!, el número que usted ingreso es igual al número aleatorio del sistema. El número fue " + numeroSistema + ".");
+	}
+
+	if (numeroUsuario < numeroSistema){
+		imprimir("El número que usted ingreso es menor que el número aleatorio del sistema. El número fue " + numeroSistema + ".");
+	}
+</script>
+</html>

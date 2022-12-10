@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>juego_adivinanzas</title>
+</head>
+<body>
+	<h3>Juego de adivinanzas</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	var numeroSistema = Math.round((Math.random() * 100));
+	var numeroIngresado = parseInt(prompt("Ingrese un número del 1 al 100: "));
+
+	if (numeroSistema == numeroIngresado){
+		imprimir("¡Perfecto, adivinaste!, el número era " + numeroSistema);
+	} else {
+		imprimir("¡Erraste!, el número era " + numeroSistema + " presiona F5 y sigue intentando.");
+	}
+</script>
+</html>
