@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Inicio de sesión</title>
+</head>
+<body>
+	<h3>Inicio de sesión</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	var usuario = "alura123";
+	var contrasenha = "alura123";
+
+	var intentos = 3;
+	var count = 1;
+
+	while (count <= intentos) {
+		var user = prompt("Ingrese su usuario: ");
+		var password = prompt("Ingrese su contraseña: ");
+
+		if (user == usuario) {
+			if (password == contrasenha){
+				alert("¡Sesión iniciada con exito!");
+				break;
+			} else {
+				alert("¡Contraseña incorrecta!, intentelo nuevamente.");
+				intentos --;
+			}
+		} else {
+			alert("¡Usuario incorrecto!, intentelo nuevamente.")
+			intentos --;
+		}
+	}
+
+	if (user == usuario) {
+		if (password == contrasenha){
+			imprimir("¡Sesión iniciada con exito!");
+		} else {
+			imprimir("¡Credenciales incorrectas!, no se puedo iniciar sesión ya que sobrepaso el número de intentos permitidos.");
+		}
+	} else {
+		imprimir("¡Credenciales incorrectas!, no se puedo iniciar sesión ya que sobrepaso el número de intentos permitidos.");
+	}
+</script>
+</html>

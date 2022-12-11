@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>promediar_edades_familia</title>
+</head>
+<body>
+	<h3>Promedio de las edades de la familia...</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	var nroPersonas = parseInt(prompt("Ingrese la cantidad de familiares: "));
+	var sumaEdades = 0;
+
+	for (var i = 1; i <= nroPersonas; i++){
+		var edad = parseInt(prompt("Ingrese la edad de la persona " + i));
+		sumaEdades += edad;
+	}
+
+	// Calculando el promedio:
+
+	promedioEdades = sumaEdades / nroPersonas;
+
+	imprimir("El promedio de las edades de los " + nroPersonas + " familiares es " + Math.round(promedioEdades) + ".");
+
+</script>
+</html>

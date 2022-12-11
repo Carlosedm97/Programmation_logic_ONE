@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>anio_mundial_fifa</title>
+</head>
+<body>
+	<h3>Años del mundial de la fifa.</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	var anioMundial = 1930;
+	var count = 0;
+	var ultimoAnio = parseInt(prompt("Ingrese el presente año: "));
+
+	while (anioMundial <= ultimoAnio) {
+		imprimir("Hubo mundial en el año " + anioMundial);
+		anioMundial = anioMundial + 4;
+		count += 1;
+	}
+
+	imprimir("Para un total de " + count + " mundiales hasta la fecha.");
+</script>
+</html>

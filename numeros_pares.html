@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>numeros_pares</title>
+</head>
+<body>
+	<h3>Números pares del 1 al 100</h3>
+</body>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+	}
+
+	function imprimir(mensaje){
+		document.write("<big>" + mensaje + "</big>");
+		saltarLinea();
+	}
+
+	for (i = 2; i <= 100; i++) {
+		if ( i % 2 == 0) {
+			imprimir(i);
+		}
+	}
+
+	imprimir("FIN.")
+</script>
+</html>

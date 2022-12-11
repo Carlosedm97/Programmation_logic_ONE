@@ -22,20 +22,28 @@
 		return Math.round(Math.random() * n);
 	}
 
-	var numero = parseInt(prompt("Por favor ingrese un número para definir el rango en que quiere que se haga el sorteo: "));
+	var numero = parseInt(prompt("Ingrese un número para definir el rango del sorteo: "));
 	var numeroSistema = sorteo(numero);
-	var numeroUsuario = parseInt(prompt("Ahora ingrese el número que cree que va a salir: "));
+	var numeroIntentos = 3;
+	var count = 1;
 
-	if (numeroUsuario > numeroSistema){
-		imprimir("El número que usted ingreso es mayor que el número aleatorio del sistema. El número fue " + numeroSistema + ".");
+	while (count <= numeroIntentos) {
+		var numeroUsuario = parseInt(prompt("Ingrese un número: "));
+
+		if (numeroUsuario == numeroSistema) {
+			alert("Número acertado en el intento " + count + ". El número era " + numeroSistema);
+			break;
+		} else {
+			alert("Intento numero " + count + ". Número errado. Intentelo nuevamente.");
+		}
+		count ++;
 	}
 
-	if (numeroUsuario == numeroSistema){
-		imprimir("¡Felicitaciones!, el número que usted ingreso es igual al número aleatorio del sistema. El número fue " + numeroSistema + ".");
+	if (numeroUsuario == numeroSistema) {
+			imprimir("Número acertado en el intento " + count + ". El número era " + numeroSistema);
+	} else {
+		imprimir("Serie de intentos no acertada. El número era " + numeroSistema);
 	}
-
-	if (numeroUsuario < numeroSistema){
-		imprimir("El número que usted ingreso es menor que el número aleatorio del sistema. El número fue " + numeroSistema + ".");
-	}
+	imprimir("Fin.")
 </script>
 </html>
