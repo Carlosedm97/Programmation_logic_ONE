@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>canvas_01</title>
+</head>
+<body>
+	<canvas width="600" height="400"></canvas>
+</body>
+<script>
+
+    function dibujarCuadrados(x){
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "green";
+        pincel.fillRect(x,0,50,50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x,0,50,50);
+    }
+
+    // var numeroCuadrados = parseInt(prompt("Ingrese la cantidad de caudrados que quiere dibujar: "));
+    // var numeroCuadrados = 12;
+    // var coordenada = 0;
+	
+    for (x = 0; x < 600; x += 50){
+        dibujarCuadrados(x);
+    }
+
+    //pincel.fillRect(50,0,50,50);
+    //pincel.strokeRect(50,0,50,50);
+
+</script>
+</html>
