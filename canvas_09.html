@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>canvas_09</title>
+</head>
+<body>
+	<canvas width="600" height="400"></canvas>
+</body>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    var x = 0;
+    var retroceso = false;
+
+	pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCircunferencia(x, y, radio){
+        pincel.fillStyle = "red";
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla() {
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function cambiarDireccion (){
+        if (x > 600) {
+            retroceso = true;
+        }
+        if (x <= 0) {
+            retroceso = false;
+        }
+    }
+
+    function actualizarPantalla(){
+        if (retroceso == false) {
+            limpiarPantalla();
+            dibujarCircunferencia(x, 50, 10);
+            cambiarDireccion();
+            x++;
+        } else {
+            limpiarPantalla();
+            dibujarCircunferencia(x, 50, 10);
+            cambiarDireccion();
+            x--;
+        }
+    }
+
+    setInterval(actualizarPantalla, 20);
+</script>
+</html>
