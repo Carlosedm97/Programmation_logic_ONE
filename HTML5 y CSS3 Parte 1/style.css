@@ -2,10 +2,22 @@ body{
     background-color: #cccccc;
 }
 
+h1{
+    text-align: center;
+}
+
 p{
     text-align: center;
 }
 
 em strong{
     color: purple;
+}
+
+#mision{
+    font-size: 20px;
+}
+
+#banner{
+    width: 100%;
 }
